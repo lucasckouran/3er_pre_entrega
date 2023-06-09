@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from app_3er.forms import *
 from app_3er.models import *
+from django.http import HttpResponse
 
 def index(request):
 	return render(request, "app_3er/index.html")
@@ -64,3 +65,21 @@ def entregableformulario(request):
 		miFormulario = EntregableFormulario()
 
 	return render(request, "app_3er/entregableformulario.html",{"miFormulario":miFormulario})
+
+
+def busquedacamada(request):
+	return render(request, "app_3er/busquedacamada.html")
+
+
+def buscar(request):
+	if request.GET['camada']:
+		camada = request.GET['camada']
+		cursos = Curso.objects.filter(camada__icontains=camada)
+		
+
+		return render(request, "app_3er/resultadobusqueda.html", {"cursos":cursos, "camada":camada})
+	
+	else:
+		respuesta = "No enviaste datos"
+
+	return HttpResponse(respuesta)
