@@ -34,6 +34,22 @@ def cursoformulario(request):
 
 	return render(request, "app_3er/cursoformulario.html",{"miFormulario":miFormulario})
 
+#def cursoformulario(request):
+	if request.method == "POST":
+		miFormulario = CursoFormulario(request.POST)
+		print(miFormulario)
+
+		if miFormulario.is_valid():
+			informacion = miFormulario.cleaned_data
+			curso = Curso(curso = informacion["curso"], camada = informacion["camada"])
+			curso.save()
+			return render(request,"app_3er/index.html")
+	
+	else:
+		miFormulario = CursoFormulario()
+
+	return render(request, "app_3er/cursos.html",{"miFormulario":miFormulario})
+
 def estudianteformulario(request):
 	if request.method == "POST":
 		miFormulario = EstudianteFormulario(request.POST)
