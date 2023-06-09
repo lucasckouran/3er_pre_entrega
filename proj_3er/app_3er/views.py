@@ -18,7 +18,7 @@ def estudiantes(request):
 def entregables(request):
 	return render(request, "app_3er/entregables.html")
 
-def cursoformulario(request):
+#def cursoformulario(request):
 	if request.method == "POST":
 		miFormulario = CursoFormulario(request.POST)
 		print(miFormulario)
@@ -34,7 +34,7 @@ def cursoformulario(request):
 
 	return render(request, "app_3er/cursoformulario.html",{"miFormulario":miFormulario})
 
-#def cursoformulario(request):
+def cursoformulario(request):
 	if request.method == "POST":
 		miFormulario = CursoFormulario(request.POST)
 		print(miFormulario)
