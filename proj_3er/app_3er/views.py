@@ -83,17 +83,17 @@ def entregableformulario(request):
 	return render(request, "app_3er/entregableformulario.html",{"miFormulario":miFormulario})
 
 
-def busquedacamada(request):
-	return render(request, "app_3er/busquedacamada.html")
+def busquedagato(request):
+	return render(request, "app_3er/busquedagato.html")
 
 
 def buscar(request):
-	if request.GET['camada']:
-		camada = request.GET['camada']
-		cursos = Curso.objects.filter(camada__icontains=camada)
+	if request.GET['nombre']:
+		nombre = request.GET['nombre']
+		sexo = Adopcion.objects.filter(nombre__icontains=nombre)
 		
 
-		return render(request, "app_3er/resultadobusqueda.html", {"cursos":cursos, "camada":camada})
+		return render(request, "app_3er/resultado_busqueda_gato.html", {"nombre":nombre, "sexo":sexo})
 	
 	else:
 		respuesta = "No enviaste datos"
