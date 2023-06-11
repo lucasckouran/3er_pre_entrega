@@ -34,7 +34,7 @@ Cursos
 
 {% endif %}
 
-<form action="" method="POST"> {% csrf_token %}
+<form action="{% url 'cursoformulario' %}" method="POST"> {% csrf_token %}
 
 		<table> 
 				{{ miFormulario.as_table }}

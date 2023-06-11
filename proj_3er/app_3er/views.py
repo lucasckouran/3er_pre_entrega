@@ -7,7 +7,7 @@ def index(request):
 	return render(request, "app_3er/index.html")
 
 def cursos(request):
-	return render(request, "app_3er/cursos.html")
+	return render(request, "app_3er/cursos.html",{"miFormulario":CursoFormulario()})
 
 def profesores(request):
 	return render(request, "app_3er/profesores.html")
