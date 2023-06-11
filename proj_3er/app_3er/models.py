@@ -1,12 +1,17 @@
 from django.db import models
 
 # Create your models here.
-class Curso(models.Model):
-    curso = models.CharField(max_length=40)
-    camada = models.IntegerField()
+class Adopcion(models.Model):
+    SEXO_CHOICES = [
+        ('macho', 'Macho'),
+        ('hembra', 'Hembra'),
+    ]
+    
+    nombre = models.CharField(max_length=40)
+    sexo = models.CharField(max_length=40, choices=SEXO_CHOICES)
 
     def __str__(self):
-	    return f"Curso: {self.curso} - Camada: {self.camada}"
+	    return f"Nombre: {self.nombre} - Sexo: {self.sexo}"
 
 class Estudiante(models.Model):
 	nombre = models.CharField(max_length=40)

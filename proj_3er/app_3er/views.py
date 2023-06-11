@@ -6,8 +6,8 @@ from django.http import HttpResponse
 def index(request):
 	return render(request, "app_3er/index.html")
 
-def cursos(request):
-	return render(request, "app_3er/cursos.html",{"miFormulario":CursoFormulario()})
+def adopciones(request):
+	return render(request, "app_3er/adopciones.html",{"miFormulario":AdopcionFormulario()})
 
 def profesores(request):
 	return render(request, "app_3er/profesores.html")
@@ -34,21 +34,21 @@ def entregables(request):
 
 	return render(request, "app_3er/cursoformulario.html",{"miFormulario":miFormulario})
 
-def cursoformulario(request):
+def adopcionformulario(request):
 	if request.method == "POST":
-		miFormulario = CursoFormulario(request.POST)
+		miFormulario = AdopcionFormulario(request.POST)
 		print(miFormulario)
 
 		if miFormulario.is_valid():
 			informacion = miFormulario.cleaned_data
-			curso = Curso(curso = informacion["curso"], camada = informacion["camada"])
-			curso.save()
+			adopcion = Adopcion(nombre = informacion["nombre"], sexo = informacion["sexo"])
+			adopcion.save()
 			return render(request,"app_3er/index.html")
 	
 	else:
-		miFormulario = CursoFormulario()
+		miFormulario = AdopcionFormulario()
 
-	return render(request, "app_3er/cursos.html",{"miFormulario":miFormulario})
+	return render(request, "app_3er/adopciones.html",{"miFormulario":miFormulario})
 
 def estudianteformulario(request):
 	if request.method == "POST":

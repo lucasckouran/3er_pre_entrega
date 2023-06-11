@@ -1,8 +1,13 @@
 from django import forms
 
-class CursoFormulario(forms.Form):
-    curso = forms.CharField(max_length=40)
-    camada = forms.IntegerField()
+class AdopcionFormulario(forms.Form):
+    SEXO_CHOICES = [
+        ('macho', 'Macho'),
+        ('hembra', 'Hembra'),
+    ]
+    
+    nombre = forms.CharField(max_length=40)
+    sexo = forms.ChoiceField(choices=SEXO_CHOICES)
 
 class EstudianteFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)

@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'curso' %}">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'adopciones' %}">Adopciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'estudiante' %}">Estudiantes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'profesor' %}">Profesores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'entregable' %}">Entregables</a></li>
@@ -53,9 +53,9 @@
 
         {% endblock index %}
 
-        {% block cursos %}
+        {% block adopciones %}
 
-        {% endblock cursos %}
+        {% endblock adopciones %}
 
         {% block profesores %}
 
@@ -69,9 +69,9 @@
 
         {% endblock estudiantes %}
 
-        {% block formulariocurso %}
+        {% block formulario_adopcion %}
 
-        {% endblock formulariocurso %}
+        {% endblock formulario_adopcion %}
 
         {% block formularioestudiante %}
 
