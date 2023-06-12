@@ -24,8 +24,21 @@ def adopciones(request):
 	# return render(request, "app_3er/adopciones.html")
 
 
-def profesores(request):
-	return render(request, "app_3er/profesores.html")
+def insumos(request):
+	if request.method == "POST":
+		miFormulario = InsumoFormulario(request.POST)
+		print(miFormulario)
+
+		if miFormulario.is_valid():
+			informacion = miFormulario.cleaned_data
+			insumos = Insumo(producto = informacion["producto"], cantidad = informacion["cantidad"])
+			insumos.save()
+			return render(request,"app_3er/index.html")
+		
+	else:
+		miFormulario = InsumoFormulario()
+
+	return render(request, "app_3er/insumos.html",{"miFormulario":miFormulario})
 
 def adoptantes(request):
 	if request.method == "POST":
@@ -63,21 +76,6 @@ def entregables(request):
 
 
 
-def entregableformulario(request):
-	if request.method == "POST":
-		miFormulario = EntregableFormulario(request.POST)
-		print(miFormulario)
-
-		if miFormulario.is_valid():
-			informacion = miFormulario.cleaned_data
-			estudiante = Entregable(nombre = informacion["nombre"], fecha_de_entrega = informacion["fecha_de_entrega"],entregado = informacion["entregado"])
-			estudiante.save()
-			return render(request,"app_3er/index.html")
-	
-	else:
-		miFormulario = EntregableFormulario()
-
-	return render(request, "app_3er/entregableformulario.html",{"miFormulario":miFormulario})
 
 
 def busquedagato(request):

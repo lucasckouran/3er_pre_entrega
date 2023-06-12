@@ -4,5 +4,5 @@ from .models import *
 
 admin.site.register(Adopcion)
 admin.site.register(Adoptante)
-admin.site.register(Profesor)
+admin.site.register(Insumo)
 admin.site.register(Entregable)

@@ -29,8 +29,8 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'adopciones' %}">Adopciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'adoptantes' %}">Adoptantes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'profesor' %}">Profesores</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'entregable' %}">Entregables</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'insumos' %}">Insumos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'busquedagato' %}">Buscador de gatos</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Gatites de Devoto</h1>
                     <h2 class="masthead-subheading mb-0">Asociacion de rescate de gatos en el barrio de Villa Devoto</h2>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Contactanos</a>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#contactanos">Contactanos</a>
                 </div>
             </div>
             <div class="bg-circle-1 bg-circle"></div>
@@ -50,31 +50,24 @@
             <div class="bg-circle-4 bg-circle"></div>
         </header>
         {% block index %}
-
         {% endblock index %}
 
         {% block adopciones %}
-
         {% endblock adopciones %}
 
-        {% block profesores %}
-
-        {% endblock profesores %}
+        {% block insumos %}
+        {% endblock insumos %}
 
         {% block entregables %}
-
         {% endblock entregables %}
 
         {% block adoptantes %}
-
         {% endblock adoptantes %}
 
         {% block busquedagato %}
-
         {% endblock busquedagato %}
 
         {% block resultado_busqueda_gato %}
-
         {% endblock resultado_busqueda_gato %}
 
 

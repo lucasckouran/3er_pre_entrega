@@ -20,10 +20,16 @@ class Adoptante(models.Model):
 	def __str__(self):
 		return f"Nombre: {self.nombre} - Apellido: {self.apellido} - email: {self.email}"
 
-class Profesor(models.Model):
-	nombre = models.CharField(max_length=40)
-	apellido = models.CharField(max_length=20)
-	email = models.EmailField(max_length=40)
+class Insumo(models.Model):
+	producto = models.CharField(max_length=40)
+	cantidad = models.IntegerField()
+	tipo_producto_choices = [
+        ('comida', 'Comida'),
+        ('medicamento', 'Medicamento'),
+    ]
+
+	def __str__(self):
+	    return f"Producto: {self.producto} - Cantidad: {self.cantidad}"
 	
 class Entregable(models.Model):
 	nombre = models.CharField(max_length=40)
