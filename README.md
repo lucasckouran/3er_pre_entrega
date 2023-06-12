@@ -1,5 +1,5 @@
 # 3er_pre_entrega
-Tercer pre entrega del curso de Python de Coder House
+Tercer pre entrega del curso de Python de Coder House del alumno Lucas Conte
 
 La web se ingresa mediante: http://127.0.0.1:8000/app_3er/
 Mientras que el admin: http://127.0.0.1:8000/admin cuyos accesos de superuser son:
