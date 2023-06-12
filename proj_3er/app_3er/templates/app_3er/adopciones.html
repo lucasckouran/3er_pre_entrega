@@ -14,7 +14,7 @@ Adopciones
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "app_3er/assets/img/cane1.jpeg" %}' alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "app_3er/assets/img/adopciones_paso1.jpg" %}' alt="..." /></div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
@@ -31,7 +31,7 @@ Adopciones
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "app_3er/assets/img/malbec.jpg" %}' alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "app_3er/assets/img/adopciones_paso2.jpg" %}' alt="..." /></div>
             </div>
             <div class="col-lg-6">
                 <div class="p-5">
@@ -48,7 +48,7 @@ Adopciones
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "app_3er/assets/img/malbec2.jpeg" %}' alt="..." /></div>
+                <div class="p-5"><img class="img-fluid rounded-circle" src='{% static "app_3er/assets/img/adopciones_paso3.jpg" %}' alt="..." /></div>
             </div>
             <div class="col-lg-6 order-lg-1">
                 <div class="p-5">
@@ -59,18 +59,17 @@ Adopciones
         </div>
     </div>
 </section>
-{% endblock adopciones %}
 
-{% block formulario_adopcion %}
-<section>
-<h1>Ingresa al gato</h1>
+
+
+<h1>Agregar gato</h1>
 {% if miFormulario.errors %}
 
 <p style="color:red;">Estan mal los datos, revisar </p>
 
 {% endif %}
 
-<form action="{% url 'adopcionformulario' %}" method="POST"> {% csrf_token %}
+<form action="" method="POST"> {% csrf_token %}
 
 		<table> 
 				{{ miFormulario.as_table }}
@@ -79,6 +78,5 @@ Adopciones
 		<input type="submit" value="Enviar">
 
 </form>
-</section>
-{% endblock formulario_adopcion %}
 
+{% endblock adopciones %}

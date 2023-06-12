@@ -9,7 +9,7 @@ class AdopcionFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)
     sexo = forms.ChoiceField(choices=SEXO_CHOICES)
 
-class EstudianteFormulario(forms.Form):
+class AdoptanteFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)
     apellido = forms.CharField(max_length=20)
     email = forms.EmailField(max_length=40)

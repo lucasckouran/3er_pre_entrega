@@ -13,7 +13,7 @@ class Adopcion(models.Model):
     def __str__(self):
 	    return f"Nombre: {self.nombre} - Sexo: {self.sexo}"
 
-class Estudiante(models.Model):
+class Adoptante(models.Model):
 	nombre = models.CharField(max_length=40)
 	apellido = models.CharField(max_length=20)
 	email = models.EmailField(max_length=40)

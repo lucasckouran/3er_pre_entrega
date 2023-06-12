@@ -28,7 +28,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'adopciones' %}">Adopciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'estudiante' %}">Estudiantes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'adoptantes' %}">Adoptantes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'profesor' %}">Profesores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'entregable' %}">Entregables</a></li>
                     </ul>
@@ -65,21 +65,9 @@
 
         {% endblock entregables %}
 
-        {% block estudiantes %}
+        {% block adoptantes %}
 
-        {% endblock estudiantes %}
-
-        {% block formulario_adopcion %}
-
-        {% endblock formulario_adopcion %}
-
-        {% block formularioestudiante %}
-
-        {% endblock formularioestudiante %}
-
-        {% block formularioentregable %}
-
-        {% endblock formularioentregable %}
+        {% endblock adoptantes %}
 
         {% block busquedagato %}
 
