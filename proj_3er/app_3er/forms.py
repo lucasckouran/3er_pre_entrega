@@ -23,9 +23,3 @@ class InsumoFormulario(forms.Form):
     producto = forms.CharField(max_length=40)
     cantidad = forms.IntegerField()
     tipo_producto_choices = forms.ChoiceField(choices=tipo_producto_choices)
-
-class EntregableFormulario(forms.Form):
-	nombre = forms.CharField(max_length=40)
-	fecha_de_entrega = forms.DateField()
-	entregado = forms.BooleanField()
-        

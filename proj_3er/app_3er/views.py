@@ -58,26 +58,6 @@ def adoptantes(request):
 	
 
 
-def entregables(request):
-	if request.method == "POST":
-		miFormulario = EntregableFormulario(request.POST)
-		print(miFormulario)
-
-		if miFormulario.is_valid():
-			informacion = miFormulario.cleaned_data
-			estudiante = Entregable(nombre = informacion["nombre"], fecha_de_entrega = informacion["fecha_de_entrega"],entregado = informacion["entregado"])
-			estudiante.save()
-			return render(request,"app_3er/index.html")
-	
-	else:
-		miFormulario = EntregableFormulario()
-
-	return render(request, "app_3er/entregables.html",{"miFormulario":miFormulario})
-
-
-
-
-
 def busquedagato(request):
 	return render(request, "app_3er/busquedagato.html")
 

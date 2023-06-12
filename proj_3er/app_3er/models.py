@@ -31,8 +31,3 @@ class Insumo(models.Model):
 	def __str__(self):
 	    return f"Producto: {self.producto} - Cantidad: {self.cantidad}"
 	
-class Entregable(models.Model):
-	nombre = models.CharField(max_length=40)
-	fecha_de_entrega = models.DateField()
-	entregado = models.BooleanField()
-	
