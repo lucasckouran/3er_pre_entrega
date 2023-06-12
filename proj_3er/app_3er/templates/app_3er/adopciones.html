@@ -54,29 +54,27 @@ Adopciones
                 <div class="p-5">
                     <h2 class="display-4">Ultimo Paso!</h2>
                     <p>Coordinaremos una emocionante cita para que te encuentres con tu nuevo amigo peludo. Podrás ver su mirada, sentir su calidez y decidir si hay una conexión especial. Una vez que todo esté en orden, te ayudaremos a preparar la adopción oficial y dar la bienvenida a tu nuevo miembro de la familia. ¡Celebra este encuentro lleno de amor y esperanza! #EncuentroConAmorFelino</p>
+                    <h1>Agregar gato</h1>
+                    {% if miFormulario.errors %}
+                    
+                    <p style="color:red;">Estan mal los datos, revisar </p>
+                    
+                    {% endif %}
+                    
+                    <form action="" method="POST"> {% csrf_token %}
+                    
+                            <table> 
+                                    {{ miFormulario.as_table }}
+                            </table>
+                    
+                            <input type="submit" value="Enviar">
+                    
+                    </form>
+                    
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-
-<h1>Agregar gato</h1>
-{% if miFormulario.errors %}
-
-<p style="color:red;">Estan mal los datos, revisar </p>
-
-{% endif %}
-
-<form action="" method="POST"> {% csrf_token %}
-
-		<table> 
-				{{ miFormulario.as_table }}
-		</table>
-
-		<input type="submit" value="Enviar">
-
-</form>
 
 {% endblock adopciones %}
